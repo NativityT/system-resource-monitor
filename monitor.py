@@ -21,6 +21,12 @@ import psutil
 
 BYTES_PER_GB = 1024 ** 3
 
+THRESHOLDS = {
+    "cpu": 80,
+    "memory": 80,
+    "disk": 90
+}
+
 
 # --------------------------------------------
 # Part 4: System Information
@@ -172,3 +178,66 @@ def display_resource_summary(summary):
     print(f"Disk Usage:   {summary['disk_percent']}%")
     print(f"Used Disk:    {summary['disk_used_gb']:.2f} GB")
     print(f"Total Disk:   {summary['disk_total_gb']:.2f} GB")
+
+
+# --------------------------------------------
+# Part 7: Warnings
+# --------------------------------------------
+
+def check_status(value, threshold):
+    """
+    Return "HIGH" if value is above threshold, otherwise "OK".
+    """
+    # TODO: Check whether value is greater than threshold. 
+    if value > threshold:
+        return "HIGH"
+
+    return "OK"
+
+def get_statuses(summary):
+    """
+    Return a dictionary with the stsatus ("OK" or "HIGH") of each resource
+    """
+
+    statuses = {
+        "cpu": check_status(summary["cpu_percent"], THRESHOLDS["cpu"]),
+
+        "memory": check_status(summary["memory_percent"], THRESHOLDS["memory"]),
+
+        "disk": check_status(summary["disk_percent"], THRESHOLDS["disk"])
+}
+    return statuses
+
+def get_warnings(summary):
+    """
+    Return a list of warning messages for any resource that is HIGH.
+    """
+
+    warnings = []
+    statuses = get_statuses(summary)
+
+    if statuses["cpu"] == "HIGH":
+        warnings.append("CPU usage is high!")
+
+    if statuses["memory"] == "HIGH":
+        warnings.append("Memory usage is high!")
+
+    if statuses["disk"] == "HIGH":
+        warnings.append("Disk usage is high.")
+
+    return warnings
+
+def display_warnings(summary):
+    """
+    Print each warning, or a friendly message if there are none.
+    """
+
+    warnings = get_warnings(summary)
+
+    # TODO: Check whether the warnings list is empty (has length 0)
+    if len(warnings) == 0:
+        print("All resources are within normal limits.")
+    else:
+        #TODO: Loop through each warning in the list and print it.
+        for warning in warnings:
+            print(warning)
