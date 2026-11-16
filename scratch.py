@@ -1,5 +1,4 @@
 import monitor
 
-summary = monitor.get_resource_summary()
-print("Statuses:", monitor.get_statuses(summary))
-monitor.display_warnings(summary)
+monitor.start_live_monitor()
+print("Back in scratch.py - the program did not crash!")
