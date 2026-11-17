@@ -52,7 +52,7 @@ python main.py
 
 ## Screenshots / Demo
 
-![Live monitor running](screenshotslive-monitor.png)
+![Live monitor running](screenshots/live-monitor.png)
 
 ## Known Limitations
 
