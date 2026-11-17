@@ -52,7 +52,7 @@ python main.py
 
 ## Screenshots / Demo
 
-![System Resource Monitor Menu](screenshots/menu.png)
+![Live monitor running](screenshotslive-monitor.png)
 
 ## Known Limitations
 
@@ -65,3 +65,4 @@ None yet.
 ## What I Learned
 
 Going into this Project, I had no experience in coding, however now I understand the neccessary components to creating a viable code. Using Python Version 3.14.8 I was able to understand the advantage in using libraries like 'os' and 'psutil' which store pre-written code that I can utilize, rather than having to write everthing from scratch. I also learned the importance of files such as 'main.py', 'scratch.py, and '.gitinore' to create a location for my stored data, keeping the code organized and easier to review/debug.
+
