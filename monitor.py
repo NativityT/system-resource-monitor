@@ -360,9 +360,3 @@ def display_top_processes(limit=5):
         memory = process_info["memory_percent"]
 
         print(f"{pid:<8} {name:<25} {memory:>7.1f}%")
-
-
-
-
-
-

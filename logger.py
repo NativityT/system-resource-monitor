@@ -1,7 +1,7 @@
 """
 logger.py
 
-Saves resourcd snapshots to a CSV file for the TB System Resource Monitor.
+Saves resource snapshots to a CSV file for the TB System Resource Monitor.
 """
 
 import csv
