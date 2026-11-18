@@ -30,7 +30,7 @@ system-resource-monitor/
 ```
 
 ## Installation
-git clone https://github.com/NativityT/tb-system-resource-monitor.git
+git clone https://github.com/NativityT/system-resource-monitor.git
 cd system-resource-monitor
 python -m pip install -r requirements.txt
 
